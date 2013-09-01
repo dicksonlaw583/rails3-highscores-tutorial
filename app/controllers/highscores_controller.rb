@@ -2,7 +2,7 @@ class HighscoresController < ApplicationController
   # GET /highscores
   # GET /highscores.json
   def index
-    @highscores = Highscore.all
+    @highscores = Highscore.top(10)
 
     respond_to do |format|
       format.html # index.html.erb
