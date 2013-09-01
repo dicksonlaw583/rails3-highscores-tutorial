@@ -1,6 +1,7 @@
 RailsHighscore::Application.routes.draw do
-  resources :highscores
+  root to: 'highscores#index'
 
+  resources :highscores, only: [:index, :new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

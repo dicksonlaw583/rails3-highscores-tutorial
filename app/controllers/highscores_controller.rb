@@ -12,14 +12,14 @@ class HighscoresController < ApplicationController
 
   # GET /highscores/1
   # GET /highscores/1.json
-  def show
-    @highscore = Highscore.find(params[:id])
+  # def show
+  #   @highscore = Highscore.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @highscore }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.json { render json: @highscore }
+  #   end
+  # end
 
   # GET /highscores/new
   # GET /highscores/new.json
@@ -27,15 +27,15 @@ class HighscoresController < ApplicationController
     @highscore = Highscore.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      #format.html # new.html.erb
       format.json { render json: @highscore }
     end
   end
 
   # GET /highscores/1/edit
-  def edit
-    @highscore = Highscore.find(params[:id])
-  end
+  # def edit
+  #   @highscore = Highscore.find(params[:id])
+  # end
 
   # POST /highscores
   # POST /highscores.json
@@ -44,10 +44,10 @@ class HighscoresController < ApplicationController
 
     respond_to do |format|
       if @highscore.save
-        format.html { redirect_to @highscore, notice: 'Highscore was successfully created.' }
-        format.json { render json: @highscore, status: :created, location: @highscore }
+        #format.html { redirect_to @highscore, notice: 'Highscore was successfully created.' }
+        format.json { render json: @highscore, status: :created }
       else
-        format.html { render action: "new" }
+        #format.html { render action: "new" }
         format.json { render json: @highscore.errors, status: :unprocessable_entity }
       end
     end
@@ -55,29 +55,29 @@ class HighscoresController < ApplicationController
 
   # PUT /highscores/1
   # PUT /highscores/1.json
-  def update
-    @highscore = Highscore.find(params[:id])
+  # def update
+  #   @highscore = Highscore.find(params[:id])
 
-    respond_to do |format|
-      if @highscore.update_attributes(params[:highscore])
-        format.html { redirect_to @highscore, notice: 'Highscore was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @highscore.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @highscore.update_attributes(params[:highscore])
+  #       format.html { redirect_to @highscore, notice: 'Highscore was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: "edit" }
+  #       format.json { render json: @highscore.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /highscores/1
   # DELETE /highscores/1.json
-  def destroy
-    @highscore = Highscore.find(params[:id])
-    @highscore.destroy
+  # def destroy
+  #   @highscore = Highscore.find(params[:id])
+  #   @highscore.destroy
 
-    respond_to do |format|
-      format.html { redirect_to highscores_url }
-      format.json { head :no_content }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html { redirect_to highscores_url }
+  #     format.json { head :no_content }
+  #   end
+  # end
 end
